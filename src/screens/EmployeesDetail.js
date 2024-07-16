@@ -1,11 +1,18 @@
-import {View, Text, StyleSheet, StatusBar} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  StatusBar,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {hp, wp} from '../theme/dimensions';
 import FastImage from 'react-native-fast-image';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-export default function EmployeesDetail({route}) {
+export default function EmployeesDetail({route, navigation}) {
   const data = route.params.item;
 
   const Separator = () => (
@@ -29,6 +36,24 @@ export default function EmployeesDetail({route}) {
             alignItems: 'center',
             paddingVertical: hp(2),
           }}>
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            style={{
+              position: 'absolute',
+              left: wp(4),
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <MaterialIcons name="arrow-back-ios" size={20} color="#000" />
+            <Text
+              style={{
+                fontWeight: 'bold',
+                color: '#000',
+              }}>
+              Back
+            </Text>
+          </TouchableOpacity>
           <Text style={styles.head}>Employee Details</Text>
         </View>
         <View style={styles.imageContainer}>

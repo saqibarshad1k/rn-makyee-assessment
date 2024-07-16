@@ -373,6 +373,7 @@ const EmployeesListing = () => {
                   backgroundColor: '#E1F5FE',
                   padding: hp(1.5),
                   borderRadius: hp(1),
+                  marginTop: hp(1),
                 }}>
                 <Text
                   style={{
